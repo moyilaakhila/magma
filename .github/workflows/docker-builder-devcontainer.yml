@@ -56,8 +56,8 @@ jobs:
     if: |
       (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
       github.ref_name == 'master' &&
-      github.repository_owner == 'magma'
-    runs-on: ubuntu-20.04
+      github.repository_owner == 'moyilaakhila'
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # pin@v3.1.0
       - name: Maximize build space
@@ -91,8 +91,8 @@ jobs:
     if: |
       (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
       github.ref_name == 'master' &&
-      github.repository_owner == 'magma'
-    runs-on: ubuntu-20.04
+      github.repository_owner == 'moyilaakhila'
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # pin@v3.1.0
       - name: Maximize build space
@@ -126,8 +126,8 @@ jobs:
     if: |
       (github.event_name == 'push' || github.event_name == 'schedule') &&
       github.ref_name == 'master' &&
-      github.repository_owner == 'magma'
-    runs-on: ubuntu-latest
+      github.repository_owner == 'moyilaakhila'
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # pin@v3.1.0
       - name: Maximize build space
@@ -166,8 +166,8 @@ jobs:
     if: |
       (github.event_name == 'push' || github.event_name == 'schedule') &&
       github.ref_name == 'master' &&
-      github.repository_owner == 'magma'
-    runs-on: ubuntu-latest
+      github.repository_owner == 'moyilaakhila'
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # pin@v3.1.0
       - name: Maximize build space
@@ -205,8 +205,8 @@ jobs:
     if: |
       (github.event_name == 'push' || github.event_name == 'schedule') &&
       github.ref_name == 'master' &&
-      github.repository_owner == 'magma'
-    runs-on: ubuntu-latest
+      github.repository_owner == 'moyilaakhila'
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # pin@v3.1.0
       - name: Maximize build space
