@@ -145,6 +145,7 @@ jobs:
           else
             export MAGMA_PACKAGE=magma=${{ github.event.client_payload.magma_version }}
           fi
+          ssh-keygen
           fab install-agw
       # Download to local and delete artifacts from remote
       - uses: actions/download-artifact@9782bd6a9848b53b110e712e20e42d89988822b7 # pin@v3.0.1
