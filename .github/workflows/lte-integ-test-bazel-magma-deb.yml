@@ -72,6 +72,7 @@ jobs:
           MAGMA_DEV_MEMORY_MB: 9216
         working-directory: 'lte/gateway/'
         run: |
+          echo "Before running the integ test"
           if [[ -z "${{ github.event.client_payload.magma_version }}" ]]; then
             export MAGMA_PACKAGE=magma
           else
@@ -81,6 +82,7 @@ jobs:
           echo "Starting integration tests using magma artifact \"${MAGMA_PACKAGE}\"."
           [ -f ~/.ssh/id_rsa.pub ] || ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa -q
           fab integ-test-deb-installation
+          echo "After running the integ test"
 
       - name: Get test results
         if: always()
