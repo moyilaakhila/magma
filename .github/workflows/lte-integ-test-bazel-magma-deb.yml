@@ -23,7 +23,7 @@ on:
 jobs:
   lte-integ-test-bazel-magma-deb:
     if: github.repository_owner == 'magma' || github.event_name == 'workflow_dispatch'
-    runs-on: macos-12
+    runs-on: macos-13
     steps:
       - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # pin@v3.1.0
         with:
@@ -56,6 +56,9 @@ jobs:
         run: |
           pip3 install --upgrade pip
           pip3 install ansible fabric jsonpickle requests PyYAML firebase_admin
+          brew install --cask virtualbox
+          brew tap hashicorp/tap
+          brew install hashicorp/tap/hashicorp-vagrant
           vagrant plugin install vagrant-vbguest vagrant-disksize vagrant-reload
       - name: Open up network interfaces for VM
         run: |
@@ -74,7 +77,9 @@ jobs:
           else
             export MAGMA_PACKAGE=magma=${{ github.event.client_payload.magma_version }}
           fi
+          echo "MAGMA_PACKAGE is set to: ${MAGMA_PACKAGE}"
           echo "Starting integration tests using magma artifact \"${MAGMA_PACKAGE}\"."
+          [ -f ~/.ssh/id_rsa.pub ] || ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa -q
           fab integ-test-deb-installation
 
       - name: Get test results
