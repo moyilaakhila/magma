@@ -63,6 +63,7 @@ jobs:
           cd lte/gateway
           export MAGMA_DEV_CPUS=3
           export MAGMA_DEV_MEMORY_MB=9216
+          export SSH_AUTH_SOCK=""
           fab provision-magma-dev-vm
       - name: Run the sudo python tests
         run: |
