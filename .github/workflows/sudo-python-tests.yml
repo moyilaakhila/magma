@@ -48,6 +48,7 @@ jobs:
       - name: checking cpu
         run: |
           system_profiler SPHardwareDataType
+          df -h
       - name: Install pre requisites
         run: |
           pip3 install --upgrade pip
