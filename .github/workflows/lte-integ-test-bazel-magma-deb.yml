@@ -73,7 +73,7 @@ jobs:
           lsblk
       - name: Run the integ test
         env:
-          MAGMA_DEV_CPUS: 3
+          MAGMA_DEV_CPUS: 4
           MAGMA_DEV_MEMORY_MB: 9216
         working-directory: 'lte/gateway/'
         run: |
