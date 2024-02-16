@@ -68,6 +68,7 @@ jobs:
       - name: Run the sudo python tests
         run: |
           cd lte/gateway
+           [ -f ~/.ssh/id_rsa.pub ] || ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa -q
           vagrant ssh -c 'cd ~/magma; bazel/scripts/run_sudo_tests.sh --retry-on-failure --retry-attempts 1;' magma
       - name: Get test results
         if: always()
