@@ -66,7 +66,9 @@ jobs:
           sudo mkdir -p /etc/vbox/
           echo '* 192.168.0.0/16' | sudo tee /etc/vbox/networks.conf
           echo '* 3001::/64' | sudo tee -a /etc/vbox/networks.conf
-
+      - name: checking cpu
+        run: |
+          lscpu
       - name: Run the integ test
         env:
           MAGMA_DEV_CPUS: 3
