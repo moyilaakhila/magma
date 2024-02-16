@@ -69,6 +69,8 @@ jobs:
       - name: checking cpu
         run: |
           lscpu
+          df -h
+          lsblk
       - name: Run the integ test
         env:
           MAGMA_DEV_CPUS: 3
