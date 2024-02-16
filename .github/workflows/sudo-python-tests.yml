@@ -45,6 +45,9 @@ jobs:
       - uses: actions/setup-python@13ae5bb136fac2878aff31522b9efb785519f984 # pin@v4.3.0
         with:
           python-version: '3.8.10'
+      - name: checking cpu
+        run: |
+          system_profiler SPHardwareDataType
       - name: Install pre requisites
         run: |
           pip3 install --upgrade pip
@@ -57,10 +60,7 @@ jobs:
           echo '* 3001::/64' | sudo tee -a /etc/vbox/networks.conf
       - name: checking cpu
         run: |
-          lscpu
-          lsblk
-          df -h
-          free
+          system_profiler SPHardwareDataType
       - name: Provision the magma-dev VM
         run: |
           cd lte/gateway
