@@ -46,7 +46,7 @@ jobs:
           fi
       - uses: actions/setup-python@13ae5bb136fac2878aff31522b9efb785519f984 # pin@v4.3.0
         with:
-          python-version: '3.8.10'
+          python-version: '3.8.2'
       - name: Install pre requisites
         run: |
           pip3 install --upgrade pip
