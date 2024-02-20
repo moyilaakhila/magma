@@ -44,9 +44,9 @@ jobs:
           else
             echo "Vagrant cloud token is not configured. Skipping login."
           fi
-      - uses: actions/setup-python@13ae5bb136fac2878aff31522b9efb785519f984 # pin@v4.3.0
+      - uses: actions/setup-python@2c3dd9e7e29afd70cc0950079bde6c979d1f69f9 # pin@v4.3.1
         with:
-          python-version: '3.8.2'
+          python-version: '3.8.10'
       - name: Install pre requisites
         run: |
           pip3 install --upgrade pip
