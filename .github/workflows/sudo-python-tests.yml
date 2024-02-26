@@ -49,6 +49,7 @@ jobs:
           python-version: '3.10.12'
       - name: Install pre requisites
         run: |
+          lscpu | grep -i virtualization
           pip3 install --upgrade pip
           pip3 install ansible fabric jsonpickle requests PyYAML firebase_admin
           sudo apt update && sudo apt install virtualbox
